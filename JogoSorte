@@ -1,0 +1,143 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class JogoSorte {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+        int pontos = 30;
+        String continuar = "sim";
+
+        System.out.println("========= SEJA BEM VINDO(A) =========");
+        System.out.println("Você irá começar com " + pontos + " pontos.");
+        System.out.println("Sua pontuação poderá aumentar ou diminuir de acordo com suas escolhas.");
+        System.out.println("========= START GAME =========");
+
+        do {
+            System.out.println("[1] Abrir o baú de madeira");
+            System.out.println("[2] Conversar com o Anonymous");
+            System.out.println("[3] Jogar no cassino");
+            System.out.println("[4] Conversar com o Euronymous");
+            System.out.println("[5] Explorar a passagem das trevas");
+            System.out.println("[6] Atravessar a avenida da Cidade Infernal");
+            System.out.println("[7] Seguir o caminho do tesouro");
+
+            System.out.print("Digite o número da sua escolha (1 a 7): ");
+            int escolha = scanner.nextInt();
+            scanner.nextLine();
+
+            int sorteio = random.nextInt(2);
+
+            switch (escolha) {
+                case 1:
+                    if (sorteio == 0) {
+                        System.out.println("Parabéns! Você ganhou 25 medalhas de torneio.");
+                        System.out.println("Você ganhou 25 pontos!");
+                        pontos += 25;
+                    } else {
+                        System.out.println("Que pena! Você se contaminou com o vírus da fraqueza. ");
+                        System.out.println("Menos 10 pontos");
+                        pontos -= 10;
+                    }
+                    break;
+            
+                case 2:
+                    if (sorteio == 0) {
+                        System.out.println("Muito bem! Você conseguiu intimidar o Anomymous e desvendar alguns segredos!");
+                        System.out.println("Mais 20 pontos");
+                        pontos += 20;
+                    } else {
+                        System.out.println("Ele faz jus ao seu nome, ninguém sabe qual é a desse cara...");
+                        System.out.println("Mesmo assim sua tentativa foi falha. Menos 5 pontos.");
+                        pontos -= 5;
+                    }
+                    break;
+
+                case 3:
+                    if (sorteio == 0) {
+                        System.out.println("Ótima jogada! Sua aposta te retornou R$7 mil reais!");
+                        System.out.println("Você ganhou mais 70 pontos");
+                        pontos += 70;
+                    } else {
+                        System.out.println("Então você achou que era fácil assim? Perdeu todas as suas fichas.");
+                        System.out.println("Você perdeu 30 pontos");
+                        pontos -= 30;
+                    }
+                    break;
+
+                case 4:
+                    if (sorteio == 0) {
+                        System.out.println("Boa! Apenas dele ser bem barra pesada, você não o mau caminho que ele quis te levar.");
+                        System.out.println("Mais 30 pontos");
+                        pontos += 30;
+                    } else {
+                        System.out.println("Você foi satanizado(a)");
+                        System.out.println("Menos 15 pontos");
+                        pontos -= 15;
+                    }
+                    break;
+
+                case 5:
+                    if (sorteio == 0) {
+                        System.out.println("Apesar dos riscos de vida e as dificuldade do caminho, você passou sem nenhum arranhão!");
+                        System.out.println("Você ganhou 45 pontos");
+                        pontos += 45;
+                    } else {
+                        System.out.println("Infelizmente você não resistiu as dificuldades e foi superado(a)");
+                        System.out.println("Você perdeu 20 pontos");
+                        pontos -= 20;
+                    }
+                    break;
+                case 6:
+                    if (sorteio == 0) {
+                        System.out.println("UMA MÁQUINA! 6km de ruínas, fogo e sofrimento não te derrubaram!");
+                        System.out.println("Você ganhou 50 pontos");
+                        pontos += 50;
+                    } else {
+                        System.out.println("As entranhas do inferno te derrotaram!");
+                        System.out.println("Você perdeu 30 pontos");
+                        pontos -= 30;
+                    }
+                    break;
+                    case 7:
+                    if (sorteio == 0) {
+                        System.out.println("Ótima ideia em seguir por aqui, um caminho cheio de glórias!");
+                        System.out.println("Você ganhou 60 pontos");
+                        pontos += 60;
+                    } else {
+                        System.out.println("O caminho do tesouro é na verdade uma farsa!");
+                        System.out.println("Você perdeu 10 pontos");
+                        pontos -= 10;
+                    }
+                    break;
+
+                default:
+                    System.out.println("OPÇÃO INVÁLIDA! VOCÊ POERDEU SUA CHANCE.");
+                    break;
+            }
+
+            System.out.println("Pontuação atual: " + pontos + " pontos.");
+
+            System.out.print("\nDeseja continuar jogando? (sim/não): ");
+            continuar = scanner.nextLine().trim().toLowerCase();
+        }
+
+        while (continuar.equals("sim"));
+
+        System.out.println("========= FIM DO JOGO =========");
+        System.out.println("Status Final do Personagem:");
+        System.out.println("Pontuação Total Acumulada: " + pontos + " pontos.");
+
+        if (pontos > 30) {
+            System.out.println("Parabéns! Você terminou com mais pontos do que começou.");
+        } else if (pontos < 30) {
+            System.out.println("Que pena... Suas escolhas te deixaram no prejuízo.");
+        } else {
+            System.out.println("Você terminou exatamente com os 30 pontos iniciais!");
+        }
+
+        scanner.close();
+
+    }
+}
