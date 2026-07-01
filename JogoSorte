@@ -32,7 +32,7 @@ public class JogoSorte {
             switch (escolha) {
                 case 1:
                     if (sorteio == 0) {
-                        System.out.println("Parabéns! Você ganhou 25 medalhas de torneio.");
+                        System.out.println("Parabéns! Você ganhou 25 medalhas de honra.");
                         System.out.println("Você ganhou 25 pontos!");
                         pontos += 25;
                     } else {
@@ -41,7 +41,7 @@ public class JogoSorte {
                         pontos -= 10;
                     }
                     break;
-            
+
                 case 2:
                     if (sorteio == 0) {
                         System.out.println("Muito bem! Você conseguiu intimidar o Anomymous e desvendar alguns segredos!");
@@ -68,7 +68,7 @@ public class JogoSorte {
 
                 case 4:
                     if (sorteio == 0) {
-                        System.out.println("Boa! Apenas dele ser bem barra pesada, você não o mau caminho que ele quis te levar.");
+                        System.out.println("Boa! Apesar dele ser bem barra pesada, você não seguiu o mau caminho que ele queria te levar.");
                         System.out.println("Mais 30 pontos");
                         pontos += 30;
                     } else {
@@ -100,7 +100,7 @@ public class JogoSorte {
                         pontos -= 30;
                     }
                     break;
-                    case 7:
+                case 7:
                     if (sorteio == 0) {
                         System.out.println("Ótima ideia em seguir por aqui, um caminho cheio de glórias!");
                         System.out.println("Você ganhou 60 pontos");
@@ -113,7 +113,7 @@ public class JogoSorte {
                     break;
 
                 default:
-                    System.out.println("OPÇÃO INVÁLIDA! VOCÊ POERDEU SUA CHANCE.");
+                    System.out.println("OPÇÃO INVÁLIDA! VOCÊ PERDEU SUA CHANCE.");
                     break;
             }
 
@@ -126,8 +126,8 @@ public class JogoSorte {
         while (continuar.equals("sim"));
 
         System.out.println("========= FIM DO JOGO =========");
-        System.out.println("Status Final do Personagem:");
-        System.out.println("Pontuação Total Acumulada: " + pontos + " pontos.");
+        System.out.println("STATUS FINAL DO PERSONAGEM:");
+        System.out.println("PONTUAÇÃO TOTAL ACUMULADA: " + pontos + " pontos.");
 
         if (pontos > 30) {
             System.out.println("Parabéns! Você terminou com mais pontos do que começou.");
